@@ -93,7 +93,6 @@ const Home: NextPage = () => {
                 <FormInputText 
                   name={`inputValue[${i}].${i}`}
                   control={control}
-                  setValue={setValue}
                   className={isFocus !== i ? "shadow-none border-none" : ""} 
                 />
               </div>
@@ -110,7 +109,6 @@ const Home: NextPage = () => {
               <FormTextarea 
                 name={`textValue[${i}].${i}`}  
                 control={control}
-                setValue={setValue}
                 className={isFocus !== i ? "shadow-none border-none" : ""}  
               />
             </div>}
