@@ -1,8 +1,8 @@
-# kleap-test-fullstack-js
+### kleap-test-fullstack-js
 
-# STACK :
-# Next.js & Redux-tolkit & Tailwind css & Typescript && React-hook-form
+## STACK
+### Next.js & Redux-tolkit & Tailwind css & Typescript && React-hook-form
 
-# INSTALLATION 
-# npm install 
-# npm run dev
+## INSTALLATION 
+### npm install 
+### npm run dev
