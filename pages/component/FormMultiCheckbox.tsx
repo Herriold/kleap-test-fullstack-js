@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
+import { FormInputText } from "./FormInputText";
+
+interface FormCheckboxProps {
+  name: string;
+  control: any;
+  setValue?: any;
+  parentId?: Number;
+}
 
 const options = [
   {
@@ -13,10 +21,11 @@ const options = [
   },
 ];
 
-export const FormMultiCheckbox: React.FC<FormInputProps> = ({
+export const FormMultiCheckbox: React.FC<FormCheckboxProps> = ({
   name,
   control,
-  setValue
+  setValue,
+  parentId
 }) => {
   const [selectedOptions, setSelectedOptions] = useState<any>([]);
 
@@ -41,6 +50,7 @@ export const FormMultiCheckbox: React.FC<FormInputProps> = ({
             <Controller
                 key={option.value}
                 name={name}
+                control={control}
                 render={({}) => {
                 return (
                     <label className="inline-flex items-center mt-3">
@@ -50,11 +60,15 @@ export const FormMultiCheckbox: React.FC<FormInputProps> = ({
                             checked={selectedOptions.includes(option.value)}
                             onChange={() => handleSelect(option.value)}
                         />
-                        <span className="ml-2 text-gray-700">{option.label}</span>
+                        <FormInputText 
+                            name={`inputCheckbox[${parentId}].${option.value}`}
+                            control={control}
+                            className="ml-2 w-2/4"
+                            defaultValue={option.label}
+                          />
                     </label>
                 );
                 }}
-                control={control}
             />
           );
         })}

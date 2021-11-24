@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
 
-export const FormInputText = ({ name, control, className }: FormInputProps) => {
-
+export const FormInputText = ({ name, control, className, defaultValue }: FormInputProps) => {
+  const defaultValueLabel = "What do you want to do ?";
 
   return (
     <Controller
-      defaultValue={"Qu\'est-ce qu\'un REACT JS ?"}
+      defaultValue={defaultValue ? defaultValue : defaultValueLabel}
       name={name}
       control={control}
       render={({
@@ -15,9 +15,9 @@ export const FormInputText = ({ name, control, className }: FormInputProps) => {
       }) => (
           <input 
               value={value}
-              className={`${className} " w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "`}
+              className={`${className} " shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "`}
               type="text" 
-              placeholder="Username" 
+              placeholder="Your form question" 
               onChange={onChange}
           />
       )}

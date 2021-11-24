@@ -2,11 +2,12 @@ import React from "react";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
 
-export const FormTextarea = ({ name, control, className }: FormInputProps) => {
+export const FormTextarea = ({ name, control, className, defaultValue }: FormInputProps) => {
+  const defaultValueLabel = "This is a TextArea for the long answer";
 
   return (
     <Controller
-      defaultValue={"Qu'est-ce qu'un TAILWIND ?"}
+      defaultValue={defaultValue ? defaultValue : defaultValueLabel}
       name={name}
       control={control}
       render={({

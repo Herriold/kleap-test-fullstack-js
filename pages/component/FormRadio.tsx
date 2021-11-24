@@ -1,6 +1,14 @@
 import React from "react";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
+import { FormInputText } from "./FormInputText";
+
+interface FormRadioProps {
+  name: string;
+  control: any;
+  setValue?: any;
+  parentId?: Number;
+}
 
 const options = [
   {
@@ -17,15 +25,21 @@ const options = [
   }
 ];
 
-export const FormRadio: React.FC<FormInputProps> = ({
+export const FormRadio: React.FC<FormRadioProps> = ({
   name,
-  control
+  control,
+  parentId
 }) => {
   const generateRadioOptions = () => {
     return options.map((singleOption) => (
         <label className="inline-flex items-center mt-3" key={singleOption.value}>
             <input type="radio" name="radio" className="form-radio h-5 w-5 text-green-600" value={singleOption.value} />
-            <span className="ml-2 text-gray-700">{singleOption.label}</span>
+            <FormInputText 
+                name={`inputRadio[${parentId}].${singleOption.value}`}
+                control={control}
+                className="ml-2 w-2/4"
+                defaultValue={singleOption.label}
+              />
         </label>
     ));
   };

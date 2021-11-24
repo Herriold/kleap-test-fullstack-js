@@ -91,14 +91,14 @@ const Home: NextPage = () => {
             <div className="flex justify-between">
               <div className="mb-4 w-2/4">
                 <FormInputText 
-                  name={`inputValue[${i}].${i}`}
+                  name={`inputValue[${i}]`}
                   control={control}
-                  className={isFocus !== i ? "shadow-none border-none" : ""} 
+                  className={isFocus !== i ? "shadow-none border-none" : "w-full"} 
                 />
               </div>
               {(isFocus === i && selected === i) && <div className="mb-4 w-1/4">
                   <FormDropdown 
-                    name={`dropdownValue[${i}].${i}`} 
+                    name={`dropdownValue[${i}]`} 
                     control={control} 
                     options={options}
                     onChangeType={(event: any) => onChangeType(event, i)}
@@ -107,22 +107,24 @@ const Home: NextPage = () => {
             </div>
             {(typeForms[i] === 1) && <div className="mb-4 w-2/4">
               <FormTextarea 
-                name={`textValue[${i}].${i}`}  
+                name={`textValue[${i}]`}  
                 control={control}
                 className={isFocus !== i ? "shadow-none border-none" : ""}  
               />
             </div>}
             {(typeForms[i] === 2) && <div className="mb-4 w-2/4">
               <FormRadio 
-                name={`radioValue[${i}].${i}`}  
-                control={control} 
+                name={`radioValue[${i}]`}  
+                control={control}
+                parentId={i} 
               />
             </div>}
             {(typeForms[i] === 3) && <div className="mb-4 w-2/4">
               <FormMultiCheckbox 
-                  name={`checkboxValue[${i}].${i}`}
+                  name={`checkboxValue[${i}]`}
                   control={control} 
                   setValue={setValue}
+                  parentId={i}
               />
             </div>}
             {(isFocus === i && selected === i) && 

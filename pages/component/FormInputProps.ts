@@ -6,5 +6,6 @@ export interface FormInputProps {
     onChangeType?: any;
     className?: string;
     handleOnChange?: any;
+    defaultValue?: any;
   }
   
