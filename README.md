@@ -2,7 +2,11 @@
 
 ## STACK
 ```
-Next.js & Redux-tolkit & Tailwind css & Typescript && React-hook-form
+Next.js 
+Redux-tolkit 
+Tailwind css 
+Typescript 
+React-hook-form
 ```
 
 ## INSTALLATION 
