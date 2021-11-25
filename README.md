@@ -1,11 +1,11 @@
 > TEST KLEAP FULLSTACK JS
 
-# STACK
+## STACK
 ```
 Next.js & Redux-tolkit & Tailwind css & Typescript && React-hook-form
 ```
 
-# INSTALLATION 
+## INSTALLATION 
 ```
 npm install 
 npm run dev
