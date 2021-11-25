@@ -1,6 +1,6 @@
 > TEST KLEAP FULLSTACK JS
 
-## STACK
+> ## STACK
 ```
 Next.js 
 Redux-tolkit 
@@ -9,7 +9,7 @@ Typescript
 React-hook-form
 ```
 
-## INSTALLATION 
+> ## INSTALLATION 
 ```
 npm install 
 npm run dev
